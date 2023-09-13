@@ -1,0 +1,41 @@
+﻿<Window x:Class="WPFLoginUI.ClientWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WPFLoginUI"
+        mc:Ignorable="d"
+            Title="ChattingRoom" Height="450" Width="800" Background="AliceBlue" Loaded="Window_Loaded">
+    <Grid HorizontalAlignment="Center" Width="800" Height="478" VerticalAlignment="Top">
+        <TextBox x:Name="txt_C_send" 
+             KeyDown="txt_C_send_KeyDown"  
+             TextChanged="txt_C_send_TextChanged"
+                             VerticalContentAlignment="Center" 
+             Height="60" Margin="156,332,283,86" Width="361"/>
+        <Button x:Name="btn_Send" Height="60" Margin="528,332,164,86" 
+            Content="发送(Enter)" Click="btn_Send_Click" ScrollViewer.CanContentScroll="True"
+            Background="White"/>
+        <Button x:Name="btn_Exit" Content="退出" Click="btn_Exit_Click" Background="White" Height="60" Margin="651,332,48,86"/>
+        <GroupBox x:Name="groupBox" Header="在线用户"  FontSize="20" HorizontalAlignment="Left" Height="300" Margin="10,10,0,0" VerticalAlignment="Top" Width="100">
+            <GroupBox.Foreground>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="Black"/>
+                    <GradientStop Color="#FFE91818" Offset="1"/>
+                </LinearGradientBrush>
+            </GroupBox.Foreground>
+            <ListBox x:Name="listBox" HorizontalAlignment="Center" Height="294"  SelectedItem="Select_Name" VerticalAlignment="Top" Width="97" >
+                <ListBox.Background>
+                    <SolidColorBrush Color="White" Opacity="0.75"/>
+                </ListBox.Background>
+            </ListBox>
+        </GroupBox>
+        <GroupBox x:Name="groupBox1" Header="聊天记录" FontSize="20" HorizontalAlignment="Left" Height="300" Margin="112,10,0,0" VerticalAlignment="Top" Width="330" Grid.ColumnSpan="2" Foreground="#FF3850E9">
+            <TextBox x:Name="txt_C_Display" MouseDoubleClick="txt_C_Display_MouseDoubleClick"  Height="273" Margin="0,0,-300,0" TextWrapping="Wrap"  VerticalAlignment="Top" HorizontalAlignment="Right" Width="618" >
+                <TextBox.Background>
+                    <SolidColorBrush Color="White" />
+                </TextBox.Background>
+            </TextBox>
+        </GroupBox>
+
+    </Grid>
+</Window>
